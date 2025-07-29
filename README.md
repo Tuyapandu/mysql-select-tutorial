@@ -24,57 +24,51 @@ gender
 FROM parks_and_recreation.employee_demographics;
 
 
-##  WHERE Clause & Logical Operators
-
-```sql
--- WHERE Clause: salary filter
+-- Employees with salary <= 50,000
 SELECT *
 FROM employee_salary
 WHERE salary <= 50000;
 
--- Logical Operators: OR, NOT
-
+-- Born after 1985 or not male
 SELECT *
 FROM employee_demographics
 WHERE birth_date > '1985-01-01'
-OR NOT gender = 'Male'
-;
+OR NOT gender = 'Male';
 
--- Combining AND and OR
-
+-- First name Leslie AND age 44 OR age > 55
 SELECT *
 FROM employee_demographics
 WHERE (first_name = 'Leslie' AND age = 44)
 OR age > 55
 ;
 
-
--- LIKE statements with these two charaters '%' and '_'
-
+-- First names starting with 'a' and at least 3 letters
 SELECT *
 FROM employee_demographics
 WHERE first_name LIKE 'a__%';
 
+-- Birth dates starting with 1989
+SELECT *
 FROM employee_demographics
-WHERE birth_date LIKE '1989%'
-;
+WHERE birth_date LIKE '1989%';
 
 
--- Grouped by
- 
+-- Group by gender
+SELECT gender
+FROM employee_demographics
+GROUP BY gender;
+
+-- Group and average age
 SELECT gender, AVG(age)
 FROM employee_demographics
-GROUP BY gender
-;
+GROUP BY gender;
 
+-- Average salary by occupation
 SELECT occupation, AVG(salary)
 FROM employee_salary
-GROUP BY occupation
-;
+GROUP BY occupation;
 
--- More grouped stats
-
+-- Multiple stats by gender
 SELECT gender, AVG(age), MAX(age), MIN(age), COUNT(age)
 FROM employee_demographics
-GROUP BY gender
-;
+GROUP BY gender;
