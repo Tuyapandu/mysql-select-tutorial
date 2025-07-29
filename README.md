@@ -33,37 +33,48 @@ FROM employee_salary
 WHERE salary <= 50000;
 
 -- Logical Operators: OR, NOT
+
 SELECT *
 FROM employee_demographics
 WHERE birth_date > '1985-01-01'
-OR NOT gender = 'Male';
+OR NOT gender = 'Male'
+;
 
 -- Combining AND and OR
+
 SELECT *
 FROM employee_demographics
 WHERE (first_name = 'Leslie' AND age = 44)
-OR age > 55;
+OR age > 55
+;
 
 
 -- LIKE statements with these two charaters '%' and '_'
+
 SELECT *
 FROM employee_demographics
 WHERE first_name LIKE 'a__%';
 
 FROM employee_demographics
-WHERE birth_date LIKE '1989%';
+WHERE birth_date LIKE '1989%'
+;
 
 
--- Grouped by 
+-- Grouped by
+ 
 SELECT gender, AVG(age)
 FROM employee_demographics
-GROUP BY gender;
+GROUP BY gender
+;
 
 SELECT occupation, AVG(salary)
 FROM employee_salary
-GROUP BY occupation;
+GROUP BY occupation
+;
 
 -- More grouped stats
+
 SELECT gender, AVG(age), MAX(age), MIN(age), COUNT(age)
 FROM employee_demographics
-GROUP BY gender;
+GROUP BY gender
+;
