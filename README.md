@@ -67,3 +67,29 @@ GROUP BY occupation;
 SELECT gender, AVG(age), MAX(age), MIN(age), COUNT(age)
 FROM employee_demographics
 GROUP BY gender;
+
+# SQL Learning Journey 🚀
+
+This repository contains my SQL notes and practice queries as I work through Alex the Analyst’s Bootcamp.  
+I’m using this as both a study guide and a portfolio to track my progress.
+
+## 📘 Topics Covered
+- [SELECT & SELECT DISTINCT](./SELECT.md)
+- [WHERE & LIKE Statements](./WHERE.md)
+- [GROUP BY & ORDER BY](./GROUPBY.md)
+- [JOINS](./JOINS.md)
+- [Subqueries & CTEs](./SUBQUERIES.md)
+- [Self Joins](./SELFJOIN.md)
+
+## 📂 Projects
+I’ll also be adding projects here that use everything from basic `SELECT` statements to `JOINS`.  
+Projects will cover:
+- IoT Data (e.g. smart sensors, weather station logs)  
+- Sales & Business Analytics (e.g. customer orders, revenue tracking)  
+- General data analysis projects (movies, COVID data, HR database, etc.)
+ basic `SELECT` statements to `JOINS`.  
+Projects will cover:
+- IoT Data (e.g. smart sensors, weather station logs)  
+- Sales & Business Analytics (e.g. customer orders, revenue tracking)  
+- General data analysis projects (movies, COVID data, HR database, etc.)
+
