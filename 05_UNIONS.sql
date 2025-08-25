@@ -1,2 +1,58 @@
-SELECT* 
+-- UNIONS
+-- a union allows you to combine rows of data from different tables or the same table 
+-- you do that by taking one selct statement and using a union to combine it with another select statement
+
+SELECT gender, age
+FROM employee_demographics
+UNION
+SELECT first_name, last_name
+FROM employee_salary
+;
+
+-- UNION/ UNION DISTINCT
+-- shows distinct results from the two tables(does not repeat results)
+SELECT first_name, last_name
+FROM employee_demographics
+UNION
+SELECT first_name, last_name
+FROM employee_salary
+;
+
+-- UNION ALL
+-- Shows all the resuts from the two tables
+SELECT first_name, last_name
+FROM employee_demographics
+UNION ALL
+SELECT first_name, last_name
+FROM employee_salary
+;
+
+
+SELECT first_name, last_name, 'old' Label
+FROM employee_demographics
+WHERE age > 50
+;
+
+SELECT first_name, last_name, 'old' Label
+FROM employee_demographics
+WHERE age > 50
+UNION
+SELECT first_name, last_name, 'Highly paid' Label
+FROM employee_salary
+WHERE salary > 70000
+;
+
+SELECT first_name, last_name,  'old Man' Label
+FROM employee_demographics
+WHERE age > 40 AND gender = 'Male'
+UNION
+SELECT first_name, last_name,  'old Lady' Label
+FROM employee_demographics
+WHERE age > 40 AND gender = 'Female'
+UNION
+SELECT first_name, last_name, 'Highly paid' Label
+FROM employee_salary
+WHERE salary > 70000
+ORDER BY first_name, last_name
+;
 
